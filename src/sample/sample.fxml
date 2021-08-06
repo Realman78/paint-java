@@ -1,0 +1,53 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioMenuItem?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml" prefHeight="600.0" prefWidth="600.0">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                    <MenuItem text="Save" onAction="#onSave"/>
+                    <MenuItem text="Undo" onAction="#Undo"/>
+                    <MenuItem text="Clear Canvas" onAction="#clearCanvas"/>
+                    <MenuItem text="Exit" onAction="#onExit" />
+                </Menu>
+                <Menu text="Draw Styles" >
+                    <RadioMenuItem text="Round" fx:id="roundID"/>
+                    <RadioMenuItem text="Block" fx:id="blockID"/>
+                    <RadioMenuItem text="Text" fx:id="textID"/>
+                    <RadioMenuItem text="Rectangle" fx:id="rectID"/>
+                    <RadioMenuItem text="Draw" fx:id="drawID"/>
+                </Menu>
+            </MenuBar>
+
+            <ToolBar>
+                <HBox alignment="CENTER" spacing="10">
+                    <TextField fx:id="a" text="18" />
+                    <ColorPicker fx:id="colorPicker" />
+                    <CheckBox fx:id="eraserCheck" text="Eraser"/>
+
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <Canvas fx:id="canvas" width="1200" height="700"/>
+    </center>
+</BorderPane>
